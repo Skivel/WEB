@@ -1,0 +1,7 @@
+.hr {height: 5px; color: blue; background-color: #2e82c3;}
+.text-left {text-align: left;}
+table {width: 30%; border-collapse: separate; border-spacing: 4px;}
+table thead tr {color: #ffffff; font-weight: bold; text-align: center;}
+table thead tr td {border-radius: 4px 4px 0 0; background: #2e82c3; text-align: center;}
+table tbody tr td {border: 1px solid #2e82c3; border-radius: 4px; background: #cbdfef; text-align: center;}
+table tbody tr td:hover {background: #a2c3dd; transition-duration: 0.2s; text-align: center;}

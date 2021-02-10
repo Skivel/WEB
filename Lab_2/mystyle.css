@@ -1,0 +1,53 @@
+table {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 50px;
+	border-size: 10px;
+	text-align: center;
+	border: solid none;
+	}
+	th, td:first-child {
+	background: blue;
+	padding: 10px 20px;
+	border: solid none;
+	border-width: 0 3px 3px 0;
+	border: solid none;
+}
+
+hr{
+	width: 15%;
+	size: 10px;
+	background-color: Black;
+}
+
+.center {
+	text-align: center;
+}
+
+h1 {
+  animation: move 3s;
+  -webkit-animation: move 3s;
+}
+
+@keyframes move {
+  from {
+  margin-left: 100%;
+  width: 300%;  
+  }
+
+  to {
+  margin-left: 0%;
+  width: 100%;
+  }
+}
+   
+@-webkit-keyframes move {
+  from {
+  margin-left: 100%;
+  width: 300%;  
+  }
+
+  to {
+  margin-left: 0%;
+  width: 100%;
+  }
+}
