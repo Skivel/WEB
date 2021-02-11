@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Моя Anketa</title>
+</head>
+<body>
+  <p><b>Ваше імя:</b><br>
+   <input type="text" size="40">
+  </p>
+  <p><b>Пароль:</b><br>
+   <input type="passwd" size="10">
+  </p>
+  <p><b>Гендер:</b><Br>
+   <input type="radio" name="sex" value="man"> М
+   <input type="radio" name="sex" value="women"> Ж
+   <input type="radio" name="sex" value="idiot" checked> Неоприділився
+  </p>
+  <p><b>Я займаюсь:</b><br>
+  <input type="checkbox" name="hobby" value="training" checked>Тренуваннями<br>
+  <input type="checkbox" name="hobby" value="meditation">Медитацією<br>
+  <input type="checkbox" name="hobby" value="work">Роботою<br>
+  <input type="checkbox" name="hobby" value="std">Навчанням<br>
+  </p>
+  <br>
+  <select size="3">Які книги читаєш?
+  <option>Науково-пізнавальні</option>
+  <option>Фантастика</option>
+  <option>Фентезі</option>
+  <option>Пригоди</option>
+  <option>Історичні</option>
+</select>
+
+  <form action="handler.php">
+  <p>Що читаєш зараз?</p>
+  <p>Поділись з нами:</p>
+  <p><textarea name="comment" rows="10" cols="45" title="Сміливіше)"></textarea></p>
+  <p text-align="center"><button>Відправити</button> <button>Отмена</button></p>
+  </form>
+</body>
+</html>
