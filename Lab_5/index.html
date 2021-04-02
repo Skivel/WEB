@@ -1,0 +1,60 @@
+<html>
+    <head>
+  <meta charset="utf-8">
+  <title>width-height</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+ <body>
+      <div class="layer1">
+   <p><strong>Властивість: height</strong> встановлює висоту блокових або замінних елементів. Висота не включає товщину кордонів навколо елемента, значення відступів і полів.</p>
+      </div>
+      <div class="layer2">
+   <p><strong>Властивість: width</strong> встановлює ширину блокових або замінних елементів. Ширина не включає товщину кордонів навколо елемента, значення відступів і полів. Висота цього елементу буде залежною від вмісту елементу.
+  </p>
+     </div>
+	 <div>
+	 <div class="fun1">
+	 </div>
+	 <div class="fun2">
+	 </div>
+	 <div class="fun3">
+	 </div>
+	 <div class="d1">
+		<div class="d2">
+			<div class="d3">
+			</div>
+		</div>
+	 </div>
+	 </div>
+	<div id="menu" class="d-flex flex-row-reverse">
+		<div class="p-2"><a href="">Головна</a></div>
+		<div class="p-2"><a href="">Новини</a></div>
+		<div class="p-2"><a href="">Контакти</a></div>
+		<div class="p-2"><a href="">Про нас</a></div>
+		<div class="p-2"><a href="">Як добратись</a></div>
+	</div>
+	<div class="container">
+  <form method="POST action="localhost:8080/api/v1/email/send">
+  <div class="form-group">
+    <label for="inputEmail">Email address</label>
+    <input type="email" class="form-control" id="inputEmail" placeholder="exemp@gmail.com">
+  </div>
+    <div class="form-group">
+    <label for="name">Name</label>
+    <input type="email" class="form-control" id="name" placeholder="your name">
+  </div>
+    <div class="form-group">
+    <label for="last_name">Email address</label>
+    <input type="email" class="form-control" id="last_name" placeholder="your last name">
+  </div>
+  <div class="form-group">
+    <label for="text">Example textarea</label>
+    <textarea class="form-control" id="text" rows="5"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary btn-lg">Send</button>
+</form>
+</div>
+ </body>
+
+</html>
