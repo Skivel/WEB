@@ -1,0 +1,137 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>laba9</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+</head>
+<script type="text/javascript">
+    const saveButton = document.getElementById('save_button');
+
+    function save() {
+        const data = getFormData();
+        addForm(data);
+    }
+
+    function getFormData() {
+        return {
+            Line1: document.getElementById('Line1').value,
+            Line2: document.getElementById('Line2').value,
+            Line3: document.getElementById('Line3').value,
+            Line4: document.getElementById('Line4').value,
+            Line5: document.getElementById('Line5').value
+        }
+    }
+
+    function addForm(data) {
+        deleteFormIfExist();
+
+        const Line1 = data.Line1;
+        const Line2 = data.Line2;
+        const Line3 = data.Line3;
+        const Line4 = data.Line4;
+        const Line5 = data.Line5;
+
+        const d = document.getElementsByTagName('body')[0];
+        const html =
+            containerHtml() +
+            getGreetingHtml() +
+            getLine1Html(Line1) +
+            getLine2Html(Line2) +
+            getLine3Html(Line3) +
+            getLine4Html(Line4) +
+            getLine5Html(Line5) +
+            endDivHtml();
+
+        d.insertAdjacentHTML('beforeend', html);
+    }
+
+    function deleteFormIfExist() {
+        const d = document.querySelector("#created-data-div");
+        if (d !== null)
+            d.remove();
+    }
+
+
+    function containerHtml() {
+        const color = getRandomColor();
+        return `<div class="container" id="created-data-div" style="color:${color}">`;
+    }
+
+    function endDivHtml() {
+        return `</div>`;
+    }
+
+    function getGreetingHtml() {
+        return `<h2 id="greeting" class="fs-2" style="text-align:center;"> hi </h2>`;
+    }
+
+    function getLine1Html(Line1) {
+        return `<h3 id="name-output" class="fs-3" style="text-align:center;"> ${Line1} </h3>`;
+    }
+
+    function getLine2Html(Line2) {
+        return `<h3 id= address-output" class="fs-3" style= "text-align:center;"> ${Line2} </h3>`;
+    }
+
+    function getLine3Html(Line3) {
+        return `<h3 id ="category-output" class="fs-3" style="text-align:center;"> ${Line3} </h3>`;
+    }
+
+    function getLine4Html(Line4) {
+        return `<h3 id ="category-output" class="fs-3" style="text-align:center;"> ${Line4} </h3>`;
+    }
+
+    function getLine5Html(Line5) {
+        return `<h3 id ="category-output" class="fs-3" style="text-align:center;"> ${Line5} </h3>`;
+    }
+
+    function getRandomColor() {
+        const number = getRandomInt(16777215)
+        const hex = number.toString(16);
+        return `#${hex}`;
+    }
+
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+    }
+
+</script>
+<body>
+
+<div class="container">
+    <form>
+        <p>Дисципліна:
+            <input class="input-group input-group-sm mb-3" type="text" id="Line1">
+        </p>
+        <p>Кількість лекцій:
+            <input class="input-group input-group-sm mb-3" type="text" id="Line2">
+        </p>
+        <p>Кількість практичних:
+            <input class="input-group input-group-sm mb-3" type="text" id="Line3">
+        </p>
+        <p>Кількість лабораторних:
+            <input class="input-group input-group-sm mb-3" type="text" id="Line4">
+        </p>
+        <p>Загальна кількість годин:
+            <input class="input-group input-group-sm mb-3" type="text" id="Line5">
+        </p>
+        <p>
+            <input type="button" value="save" id="save_button" onclick="save()">
+        </p>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
+        integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
+        integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
+        crossorigin="anonymous"></script>
+</body>
+</html> 
