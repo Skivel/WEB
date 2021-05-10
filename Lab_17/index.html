@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <title></title>
+        <meta content="" charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="main.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+              $("button").click(function(){
+                $("p").hide();
+              });
+            });
+        </script>
+    </head>
+
+    <body>
+        <div align="center">
+            <div class="con">
+                <h1>Input number</h1>
+                num1: <input id="num1" type="text" value=""><br>
+                num2: <input id="num2" type="text" value=""><br>
+                <input type="button" value="Click" onClick="onclicks()"><br>
+                <div class="results"></div>              
+
+                <h1>How old are you?</h1>
+                <h4>Pls input xxxx format</h4>
+                year: <input id="old" type="text" value="" maxlength="4"><br>
+                <input type="button" value="Click" onClick="onclicks_old()"><br>
+                <div class="results-old"></div>
+
+                <h1>What is your sex, height and weight?</h1>
+                <input type="radio" class="message_pri" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+                <input type="radio" class="message_pri" id="female" name="gender" value="female">
+                <label for="female">Female</label><br>
+                height: <input id="height" type="text" value=""><br>              
+                <input type="button" value="Perfect weight" onClick="onclicks_sh()"><br>
+                <div class="results-sh"></div>
+                <input type="range" id="rng" name="volume" min="0" max="100" value="0"><br>
+                <label for="volume">0-100kg.</label>
+            </div>         
+        </div>
+
+        <script>
+            function onclicks() {
+                let n1 = $('#num1').val();
+                let n2 = $('#num2').val();
+
+                $.ajax({
+                    type: 'POST',
+                    url: 'a1.php',
+                    data: 'num1='+n1+'&num2='+n2,
+
+                    success: function(data) {
+                        $('.results').html(data);
+                    }
+                });
+            }
+
+            function onclicks_old() {
+                let year = $('#old').val();
+
+                $.ajax({
+                    type: 'POST',
+                    url: 'a2.php',
+                    data: 'year='+year,
+
+                    success: function(data) {
+                        $('.results-old').html(data);
+                    }
+                });
+            }
+
+            function onclicks_sh() {
+                let gender = $(".message_pri:checked").val();
+                let height = $('#height').val();
+
+                $.ajax({
+                    type: 'POST',
+                    url: 'a3.php',
+                    data:   'gender='+gender+
+                            '&height='+height,
+
+                    success: function(data) {
+                        $('.results-sh').html(data);
+                        document.getElementById("rng").value = (height - 100 - 0.2*(height - 152));
+                    }    
+                });
+            }
+        </script>
+    </body>
+</html>
